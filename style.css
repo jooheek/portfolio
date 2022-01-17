@@ -1,0 +1,12 @@
+:root {
+  --font-size: 32px;
+  --background-color: thistle;
+  --base-space: 8px;
+  --text-color: white;
+}
+
+.first-list {
+  background-color: var(--background-color, red);
+  margin-left: calc(var(--base-space) * 2);
+  color: var(--text-color);
+}
