@@ -13,6 +13,7 @@
   --color-orange: #feb546;
   --color-black: #000000;
   --color-beige: beige;
+  --color-deep-yellow: #ffe082;
 
   /* Font size */
   --font-large: 48px;
@@ -33,6 +34,9 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
+
+  /* Animation */
+  --animation-duration: 250ms;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -133,7 +137,7 @@ p {
 .home__avatar {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 25%;
   border: 2px solid var(--color-light-white);
 }
 
@@ -149,4 +153,72 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-black);
   border-radius: var(--size-border-radius);
+}
+
+/* Section common */
+.page-container {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+/* section은 여러 곳에서 사용될 수 있기 때문에 태그를 선택자로 사용해서 스타일링 하는 것은 좋은 방법이 아니다. 
+따라서 클래스명을 따로 만들어서 css가 적용되게함 */
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  color: var(--color-dark-grey);
+  border: 1px solid var(--color-dark-grey);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i {
+  transition: all var(--animation-duration) ease;
+}
+.major__icon:hover i {
+  color: var(--color-deep-yellow);
+  transform: rotate(-30deg) scale(1.1);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
