@@ -159,11 +159,15 @@ p {
 .page-container {
   padding: 50px;
   text-align: center;
-  max-width: 1200px;
   margin: auto;
 }
 /* section은 여러 곳에서 사용될 수 있기 때문에 태그를 선택자로 사용해서 스타일링 하는 것은 좋은 방법이 아니다. 
 따라서 클래스명을 따로 만들어서 css가 적용되게함 */
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
 
 /* About */
 .about__majors {
@@ -221,4 +225,58 @@ p {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+/* Skill */
+
+#skills {
+  background-color: var(--color-yellow);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  margin: 20px 0;
+}
+.skillset__title {
+  color: var(--color-white);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.skill {
+  margin-bottom: 16px;
+}
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill__value {
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.tools {
+  background-color: var(--color-grey);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }
