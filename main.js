@@ -12,7 +12,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-//navbar 메뉴 선택시 동일한 section으로 스크롤
+//navbar 메뉴 선택시 동일한 section으로 이동
 const navbarMenu = document.querySelector(".navbar__menu");
 
 navbarMenu.addEventListener("click", (event) => {
@@ -22,7 +22,16 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  console.log(link);
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
+  scrollIntoView(link);
 });
+
+//home 의 contact me 버튼 클릭시 하단 contact section으로 이동
+const contactBtn = document.querySelector(".home__contact");
+contactBtn.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
