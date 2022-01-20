@@ -464,6 +464,23 @@ p {
   transition: all var(--animation-duration) ease;
 }
 
+/* Arrow */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 50px;
+  color: var(--color-black);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 /* 미디어 쿼리 CSS에는 최소한의 요소만 추가한다. */
 @media screen and (max-width: 768px) {

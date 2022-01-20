@@ -27,6 +27,7 @@ navbarMenu.addEventListener("click", (event) => {
 
 //home 의 contact me 버튼 클릭시 하단 contact section으로 이동
 const contactBtn = document.querySelector(".home__contact");
+
 contactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
@@ -37,6 +38,22 @@ const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//페이지 하단으로 이동시 상단 이동 버튼
+const arrowUp = document.querySelector(".arrow-up");
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+//arrow 클릭시 상단으로 이동
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
 });
 
 //selector 선택시 스크롤되는 공통 함수
