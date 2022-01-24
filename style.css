@@ -1,3 +1,4 @@
+/* 전역변수 선언, 공통적으로 사용하는 색상, 폰트, 사이즈에 변수를 할당해 통일감을 줌 */
 :root {
   /* Color */
   --color-white: #ffffff;
@@ -33,6 +34,7 @@
 }
 
 /* Universal tags */
+/* border-box로 박스를 parent container영역 내부로 제한함 */
 * {
   box-sizing: border-box;
 
@@ -60,10 +62,10 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
-
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
@@ -93,7 +95,7 @@ p {
 }
 
 /* Navbar */
-
+/* navbar 상단고정, 상단에서는 navbar 투명, 화면크기 변화시 모든 요소 느린변화 z-index로 z-index:auto 속성의 맨위에 존재*/
 #navbar {
   position: fixed;
   width: 100%;
@@ -106,7 +108,7 @@ p {
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
 }
-
+/* navbar--dark 클래스 적용시 transparent였던 navbar의 바탕색을 베이지로 바꿔줌 */
 #navbar.navbar--dark {
   background-color: var(--color-beige);
 }
@@ -143,7 +145,6 @@ p {
 }
 
 /* Home */
-
 #home {
   background: url("image/wallpaper.png") center/cover no-repeat;
   padding: 40px;
@@ -182,7 +183,7 @@ p {
   text-align: center;
   margin: auto;
 }
-/* section은 여러 곳에서 사용될 수 있기 때문에 태그를 선택자로 사용해서 스타일링 하는 것은 좋은 방법이 아니다. 
+/* section은 여러 곳에서 사용될 수 있기 때문에 태그를 선택자로 사용해서(#section) 스타일링 하는 것은 좋은 방법이 아니다. 
 따라서 클래스명을 따로 만들어서 css가 적용되게함 */
 
 .section__container {

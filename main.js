@@ -5,6 +5,8 @@ const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
+  //window.scrollY() : 화면이 하단으로 얼마나 스크롤 됐는지 수치를 나타냄
+  //window.scrollY()가 navbar 의 높이보다 크다면, 즉 navbar의 길이보다 더 많이 하단으로 이동했다면 navbar--dark 클래스를 추가한다.
   if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
   } else {
@@ -70,7 +72,7 @@ const projects = document.querySelectorAll(".project");
 
 workBtnContainer.addEventListener("click", (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-
+  console.log(filter);
   if (filter == null) {
     return;
   }
